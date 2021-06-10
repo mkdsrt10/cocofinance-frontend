@@ -3,7 +3,7 @@ import {useState} from "react";
 import Message from "./Message";
 
 export default function ListFarms(){
-    const [messages, setMessage] = useState([1,2,3]);
+    const [messages, setMessage] = useState([]);
     return (
         <div className={styles.List}>
             {

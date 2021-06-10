@@ -1,11 +1,13 @@
 .main{
     background: #FFFFFF;
     border: 1px solid #D7D7DF;
+    border-radius: 6px;
     box-sizing: border-box;
     margin-top: 3vh;
     display: flex;
     flex-direction: column;
     padding: 1rem 1.7rem;
+    max-width: 800px;
 
     cursor: pointer;
 }
