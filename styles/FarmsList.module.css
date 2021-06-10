@@ -1,6 +1,6 @@
 .Main{
     flex: 1;
-    height: 100vh;
+    height: auto;
     background-color: #F7F8FA;
     padding: 5vh 6vw;
     max-width: 1200px;
@@ -37,17 +37,18 @@
 @media only screen and (max-width: 800px) {
     .Main{
         flex: 1;
-        height: 100vh;
+        height: auto;
         background-color: #F7F8FA;
         padding: 2vh 6vw;
         max-width: 1200px;
     }
     .MainContainer{
         flex: 1;
-        height: 100vh;
+        height: 91vh;
         background-color: #F7F8FA;
         overflow: scroll;
         padding-bottom: 5vh;
+        margin-bottom: 12vh;
     }
     .Heading{
         margin-bottom: 2vh;
