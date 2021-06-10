@@ -49,7 +49,7 @@ function beefyUrl(chain){
 export default function Farm({farm, amount, timeInDays}){
     const [showDetails, setshowDetails] = useState(false);
     const redirect = res => {
-        switch (farm.aggregateFrom){
+        switch (farm.aggregatedFrom){
             case "Beefy":
                 return window.open(beefyUrl(farm.chain)+"vault/"+farm.id, "_blank")
             case "Pancake":
