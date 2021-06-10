@@ -1,0 +1,30 @@
+.Main{
+    flex: 1;
+    height: 100vh;
+    background-color: #F7F8FA;
+    padding: 4vh 4vw;
+    overflow: scroll;
+}
+
+.Heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Heading h1{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    color: #2A3256;
+}
+
+.Heading p{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #9095A2;
+}

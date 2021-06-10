@@ -1,0 +1,59 @@
+.SearchMulti{
+
+}
+
+.SearchAssets{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Button{
+    background: #F7F8FA;
+    border: 2px solid #573BFF;
+    box-sizing: border-box;
+
+    flex: 1;
+    margin: 0 2vw 0 4vw;
+
+    cursor: pointer;
+    height: 100%;
+    padding: 1.3vh 1vh;
+
+    border-radius: 8px;
+
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #573BFF;
+}
+
+.FilterSort{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
+}
+.FilterSortItem{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 4vw;
+}
+.FilterSortItem p{
+    margin: 0.2rem 0;
+
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: #979BB0;
+}

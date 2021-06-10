@@ -1,0 +1,150 @@
+.main{
+    background: #FFFFFF;
+    border: 1px solid #D7D7DF;
+    box-sizing: border-box;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    cursor: pointer;
+}
+
+.summary{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0.5rem;
+}
+.summaryIcon{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 4;
+    margin-left: 1rem;
+}
+.summaryIcon h4{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #2A3256;
+    margin-left: 1rem;
+}
+
+.summaryValue h4{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #2A3256;
+    text-align: center;
+    margin: 0.4rem;
+    width: 100%;
+}
+.summaryValue p{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #979BB0;
+    margin: 0.4rem;
+    width: 100%;
+}
+
+.summaryValue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1
+}
+
+
+.desciptionBox{
+    border-top: 1px solid #D7D7DF;
+    display: flex;
+    flex-direction: column;
+}
+
+.desciptionBoxBreif{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.desciptionBoxBreif p{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #979BB0;
+    margin: 0.6rem 0 0;
+}
+.desciptionBoxDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem
+}
+.desciptionBoxDetailsInstruction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    flex: 1;
+}
+.desciptionBoxDetailsInstruction h3{
+    margin: 0.5rem 0;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    color: #2A3256;
+}
+.desciptionBoxDetailsInstruction p{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #979BB0;
+}
+.desciptionBoxDetailsLinks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    flex: 1;
+    border-left: 1px solid #D7D7DF;;
+}
+
+.Button{
+    background: white;
+    border: 2px solid #573BFF;
+    box-sizing: border-box;
+
+    flex: 1;
+    margin: 0.5rem 2vw 0.5rem 4vw;
+
+    cursor: pointer;
+    height: 100%;
+    width: 70%;
+    padding: 1vh 1vh;
+
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #573BFF;
+}

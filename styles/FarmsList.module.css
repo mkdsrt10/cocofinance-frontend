@@ -1,0 +1,36 @@
+.Main{
+    flex: 1;
+    height: 100vh;
+    background-color: #F7F8FA;
+    padding: 4vh 4vw;
+    margin: auto;
+    max-width: 1000px;
+}
+.MainContainer{
+    flex: 1;
+    height: 100vh;
+    background-color: #F7F8FA;
+    overflow: scroll;
+}
+.Heading{
+    margin-bottom: 5vh;
+    margin-top: 2vh;
+}
+
+.Heading h1{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    color: #2A3256;
+    margin: 0.5vh 0 1vh;
+}
+
+.Heading p{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #9095A2;
+    margin: 0.5vh 0;
+}
