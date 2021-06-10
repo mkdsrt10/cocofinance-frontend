@@ -37,8 +37,27 @@ export const calInterest = (amount, apr, rateCompound, days) => {
     return amount*(Rate-1)
 }
 
+function beefyUrl(chain){
+    switch (chain){
+        case 56:
+            return "https://app.beefy.finance/"
+        default :
+            return "https://app.beefy.finance/"
+    }
+}
+
 export default function Farm({farm, amount, timeInDays}){
     const [showDetails, setshowDetails] = useState(false);
+    const redirect = res => {
+        switch (farm.aggregateFrom){
+            case "Beefy":
+                return window.open(beefyUrl(farm.chain)+"vault/"+farm.id, "_blank")
+            case "Pancake":
+                return window.open("https://pancakeswap.finance/farms", "_blank")
+            default:
+                return window.open(beefyUrl(farm.chain)+"vault/"+farm.id, "_blank")
+        }
+    }
     return (
         <div onClick={() => {setshowDetails(!showDetails)}} className={styles.main}>
             <div className={styles.summary}>
@@ -79,12 +98,10 @@ export default function Farm({farm, amount, timeInDays}){
                     <div className={styles.desciptionBoxDetails}>
                         <div className={styles.desciptionBoxDetailsInstruction}>
                             <h3>Instruction</h3>
-                            <p>Non arcu tellus est varius. Id porta auctor eu velit. Pellentesque quam tellus id sapien morbi malesuada.
-                                Justo, nisl mattis neque, euismod orci massa ut eu egestas. Id placerat netus blandit purus, adipiscing. </p>
+                            <p>{farm.instruction}</p>
                         </div>
                         <div className={styles.desciptionBoxDetailsLinks}>
-                            <button className={styles.Button}>Buy tokens</button>
-                            <button className={styles.Button}>Farm them</button>
+                            <button onClick={redirect} className={styles.Button}>Go to vault</button>
                         </div>
                     </div>
                 }

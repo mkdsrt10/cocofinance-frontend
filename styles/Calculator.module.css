@@ -86,7 +86,7 @@
 }
 .Hide{
     position: fixed;
-    top: 20vh;
+    top: 10vh;
     padding: 0.5rem;
     border-radius: 5px 0 0 5px;
     border: 1px solid #D7D7DF;
