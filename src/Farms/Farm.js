@@ -98,7 +98,9 @@ export default function Farm({farm, amount, timeInDays}){
                     <div className={styles.desciptionBoxDetails}>
                         <div className={styles.desciptionBoxDetailsInstruction}>
                             <h3>Instruction</h3>
-                            <p>{farm.instruction}</p>
+                            <p>{farm.instruction.split("\n").map(inst => {
+                                return <p>{inst}</p>
+                            })}</p>
                         </div>
                         <div className={styles.desciptionBoxDetailsLinks}>
                             <button onClick={redirect} className={styles.Button}>Go to vault</button>
