@@ -1,7 +1,6 @@
 .SearchMulti{
 
 }
-
 .SearchAssets{
     display: flex;
     flex-direction: row;
@@ -20,14 +19,14 @@
 
     cursor: pointer;
     height: 100%;
-    padding: 1.3vh 1vh;
+    padding: 1vh 1vh;
 
-    border-radius: 8px;
+    border-radius: 6px;
 
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1rem;
     color: #573BFF;
 }
 
@@ -37,7 +36,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 2vh;
+    margin-top: 4vh;
 }
 .FilterSortItem{
     flex: 1;
@@ -53,7 +52,58 @@
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 1rem;
     color: #979BB0;
+}
+.SearchAssetsMobile, .FilterSortMobile{
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .SearchAssetsMobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex: 1;
+    }
+    .SearchAssets{
+        display: none;
+    }
+    .Button{
+        width: 100%;
+        padding: 0.5vh 1vh;
+        margin-top: 1vh;
+    }
+    .FilterSort{
+        display: none;
+    }
+    .FilterSortMobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex: 1;
+        margin-bottom: 2vh;
+    }
+    .FilterSortItem{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0.8vh 0;
+        width: 100%;
+    }
+    .FilterSortItem p{
+        margin: 0 0;
+
+        font-family: Poppins, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.9rem;
+        color: #979BB0;
+    }
 }

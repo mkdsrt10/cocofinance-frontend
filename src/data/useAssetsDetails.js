@@ -4,6 +4,8 @@ import useSWR from 'swr';
 function AprSort(a, b){return b.apr-a.apr}
 function TvlSort(a, b){return b.apr-a.apr}
 
+const chains = [56, 128, 137, 250, 43114]
+
 export default function useAssetsDetails({search, chain, sortBy, platform}){
     const [dataF, setDataF] = useState([]);
     const fetcher = async (url) => {
@@ -13,7 +15,6 @@ export default function useAssetsDetails({search, chain, sortBy, platform}){
     const { data, error } = useSWR('getAprTvl', fetcher)
 
     useEffect(() => {
-        console.log("FilterArray:", search, chain, sortBy, platform)
         if (error) return (setDataF([]))
         if (!data) return (setDataF([]))
         const filterChain = chain === null || chain.value===-1 ? {...data["56"], ...data["128"], ...data["137"], ...data["250"], ...data["43114"]} : {...data[[chain.value]]}
@@ -40,15 +41,14 @@ export default function useAssetsDetails({search, chain, sortBy, platform}){
     return (dataF)
 }
 
-
-export function useTokensSearch({farms}){
-    let data = [];
+export function useTokensSearch({search, chain, sortBy, platform}){
+    let farms = useAssetsDetails({search, chain, sortBy, platform})
+    let data2 = [];
     farms.map(farm => {
-        data.push(...farm.assets)
+        data2.push(...farm.assets)
     })
-    const uniqueArray = data.filter(function(item, pos) {
-        return data.indexOf(item) == pos;
+    const uniqueArray = data2.filter(function(item, pos) {
+        return data2.indexOf(item) == pos;
     })
-    console.log(uniqueArray)
     return uniqueArray.map(dat => ({label:dat, value: dat}))
 }

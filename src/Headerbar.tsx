@@ -1,6 +1,5 @@
 import styles from '../styles/Header.module.css'
 import Image from 'next/image'
-import classname from 'classnames';
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 
@@ -12,7 +11,6 @@ export default function Headerbar({}){
         console.debug("Debug", router.pathname.replace("/", "")===""?"app":router.pathname.replace("/", ""));
         setRoute(router.pathname.replace("/", "")===""?"app":router.pathname.replace("/", ""))
     })
-
     async function routeTo(rTo:string){
         if (rTo === route){
             console.log("You are already here")
@@ -23,7 +21,7 @@ export default function Headerbar({}){
 
     return (
         <div className={styles.Header}>
-            <div>
+            <div className={styles.LogoWeb}>
                 <Image
                     src="/logo.svg"
                     alt="Logo"
@@ -38,8 +36,18 @@ export default function Headerbar({}){
                         alt="App"
                         width={25}
                         height={25}
+                        layout={"intrinsic"}
                     />
                     <p>App</p>
+                </div>
+                <div className={styles.LogoMobile}>
+                    <Image
+                        src="/logo.svg"
+                        alt="Logo"
+                        width={50}
+                        height={50}
+                        layout={"intrinsic"}
+                    />
                 </div>
                 {/*<div onClick={() => routeTo("blog")} className={route === "blog" ? styles.NavItemsSelected:styles.NavItems}>*/}
                 {/*    <Image*/}
@@ -54,6 +62,7 @@ export default function Headerbar({}){
                     <Image
                         src={route === "notification" ? "/bell_selected.svg":"/bell.svg"}
                         alt="Msg"
+                        layout={"intrinsic"}
                         width={25}
                         height={25}
                     />

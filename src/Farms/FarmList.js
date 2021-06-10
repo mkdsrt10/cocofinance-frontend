@@ -13,7 +13,7 @@ export default function FarmList({search, amount, setSearch, chain, platform, so
                 </div>
                 <SearchFilter chain={chain} setChain={setChain} platform={platform} sortBy={sortBy} setSortBy={setSortBy}
                               setPlatform={setPlatform} search={search} setSearch={setSearch} />
-                <ListFarms amount={amount} search={search} chain={chain} platform={platform} sortBy={sortBy}/>
+                <ListFarms timeInDays={timeInDays} amount={amount} search={search} chain={chain} platform={platform} sortBy={sortBy}/>
             </div>
         </div>
     )

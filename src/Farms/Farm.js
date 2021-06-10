@@ -1,22 +1,18 @@
 import styles from "../../styles/Farm.module.css";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 
-function dailyAPr(yApr){
+const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
+const calcDaily = apr => {
+    if (!apr) return `???`;
 
-}
-
-const calcDaily = apy => {
-    if (!apy) return `???`;
-
-    const g = Math.pow(10, Math.log10(apy + 1) / 365) - 1;
+    const g = apr/365;
     if (isNaN(g)) {
         return '- %';
-    }
 
+    }
     return `${(g * 100).toFixed(2)}%`;
 };
-const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
 export const formatTvl = (tvl) => {
     let order = Math.floor(Math.log10(tvl) / 3);
     if (order < 0) { order = 0 }
@@ -36,8 +32,12 @@ export const formatApy = apy => {
     const num = apy / 1000 ** order;
     return `${num.toFixed(2)}${units[order]}%`;
 };
+export const calInterest = (amount, apr, rateCompound, days) => {
+    const Rate = ((1+(apr/rateCompound))**(days*rateCompound/365))
+    return amount*(Rate-1)
+}
 
-export default function Farm({farm, amount}){
+export default function Farm({farm, amount, timeInDays}){
     const [showDetails, setshowDetails] = useState(false);
     return (
         <div onClick={() => {setshowDetails(!showDetails)}} className={styles.main}>
@@ -46,29 +46,31 @@ export default function Farm({farm, amount}){
                     <Image src={"/"+farm.logo} width={50} height={50}/>
                     <h4>{farm.name}</h4>
                 </div>
-                <div className={styles.summaryValue}>
-                    <h4>{formatApy(farm.apr)}</h4>
-                    <p>APR</p>
-                </div>
-                <div className={styles.summaryValue}>
-                    <h4>{calcDaily(farm.apr)}</h4>
-                    <p>Daily APR</p>
-                </div>
-                <div className={styles.summaryValue}>
-                    <h4>{formatTvl(farm.tvl)}</h4>
-                    <p>TVL</p>
+                <div className={styles.summaryIcon}>
+                    <div className={styles.summaryValue}>
+                        <h4>{formatApy(farm.apr)}</h4>
+                        <p>APR</p>
+                    </div>
+                    <div className={styles.summaryValue}>
+                        <h4>{calcDaily(farm.apr)}</h4>
+                        <p>Daily APR</p>
+                    </div>
+                    <div className={styles.summaryValue}>
+                        <h4>{formatTvl(farm.tvl)}</h4>
+                        <p>TVL</p>
+                    </div>
                 </div>
                 {
                     amount > 1 &&
                     <div className={styles.summaryValue}>
-                        <h4>1000</h4>
+                        <h4>{formatTvl(calInterest(amount, farm.apr, farm.rateCompound, timeInDays))}</h4>
                         <p>Expected Interest</p>
                     </div>
                 }
             </div>
             <div className={styles.desciptionBox}>
                 <div className={styles.desciptionBoxBreif}>
-                    <p>Platform: Beefy</p>
+                    <p>Platform: {farm.aggregatedFrom}</p>
                     <p>Details
                         {showDetails?<img src={"/chevron-up.svg"}/>:<img src={"/chevron-down.svg"}/>}</p>
                 </div>

@@ -2,35 +2,71 @@
     flex: 1;
     height: 100vh;
     background-color: #F7F8FA;
-    padding: 4vh 4vw;
-    margin: auto;
-    max-width: 1000px;
+    padding: 5vh 6vw;
+    max-width: 1200px;
 }
 .MainContainer{
     flex: 1;
     height: 100vh;
     background-color: #F7F8FA;
     overflow: scroll;
+    padding-bottom: 5vh;
 }
+
 .Heading{
     margin-bottom: 5vh;
     margin-top: 2vh;
 }
-
 .Heading h1{
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 36px;
+    font-size: 2rem;
     color: #2A3256;
     margin: 0.5vh 0 1vh;
 }
-
 .Heading p{
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 1.2rem;
     color: #9095A2;
     margin: 0.5vh 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .Main{
+        flex: 1;
+        height: 100vh;
+        background-color: #F7F8FA;
+        padding: 2vh 6vw;
+        max-width: 1200px;
+    }
+    .MainContainer{
+        flex: 1;
+        height: 100vh;
+        background-color: #F7F8FA;
+        overflow: scroll;
+        padding-bottom: 5vh;
+    }
+    .Heading{
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+    }
+    .Heading h1{
+        font-family: Poppins, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #2A3256;
+        margin: 0.5vh 0 1vh;
+    }
+    .Heading p{
+        font-family: Poppins, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        color: #9095A2;
+        margin: 0.5vh 0;
+    }
 }

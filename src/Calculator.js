@@ -45,10 +45,10 @@ const customStyles = {
 
 export default function Calculator({setSearch, setAmount, setChain, setTimeInDays, loadSearch, setLoadSearch }){
     const [amountI, setAmountI] = useState("");
-    const [chainI, setChainI] = useState("");
+    const [chainI, setChainI] = useState(null);
     const [tokenI, setTokenI] = useState("");
     const [timeI, setTimeI] = useState("");
-    const [timeUnit, setTimeUnit] = useState("");
+    const [timeUnit, setTimeUnit] = useState("D");
     const [hide, setHide] = useState(false);
 
     function getDayConversion(tu){
@@ -65,45 +65,48 @@ export default function Calculator({setSearch, setAmount, setChain, setTimeInDay
     }
 
     function calculate(){
+        console.log(amountI, chainI, timeI, timeUnit)
         if (amountI > 10 && ["D", "M", "Y"].includes(timeUnit) && timeI > 0 ){
             setAmount(amountI)
             setTimeInDays(timeI*getDayConversion(timeUnit))
             setChain(chainI)
             setSearch(tokenI)
             setLoadSearch(true)
+            setTimeout(() => setLoadSearch(false), 5000)
         }
     }
 
-    const farms = useAssetsDetails({search:"", chain: chainI, sortBy:"apr", platform:""});
-    const farmOption = useTokensSearch({farms:farms})
+    const farmOption = useTokensSearch({search:"", chain: chainI, sortBy:"apr", platform:null})
 
     return (
-        <div>
+        <div className={styles.MainCont}>
             <div className={styles.Main} style={{display:(hide?"none":"flex")}}>
                 <div className={styles.Heading}>
                     <h1>Calculate</h1>
                     <p>Get best APR on stable coin farms so that you can grow your crypto safely.</p>
-                    <Select onChange={(selectedOption) => setTokenI({selectedOption})}
-                            isMulti isSearchable styles={customStyles}
-                            options={farmOption}
-                            placeholder={"Token"}/>
-                    <Select onChange={(selectedOption) => setChainI({selectedOption})}
-                            isMulti isSearchable styles={customStyles}
-                            options={[{label:"Any", value: -1}, {label:"BSC", value:56}, {label:"ETH Mainnet", value:97}]}
-                            placeholder={"Chain"}/>
+                    {/*<Select onChange={(selectedOption) => {*/}
+                    {/*    setTokenI(selectedOption);*/}
+                    {/*}}*/}
+                    {/*        isMulti isSearchable styles={customStyles}*/}
+                    {/*        options={farmOption}*/}
+                    {/*        placeholder={"Token"}/>*/}
+                    {/*<Select onChange={(selectedOption) => setChainI(selectedOption)}*/}
+                    {/*        isMulti isSearchable styles={customStyles} value={chainI}*/}
+                    {/*        options={[{label:"Any", value: -1}, {label:"BSC", value:56}, {label:"ETH Mainnet", value:97}]}*/}
+                    {/*        placeholder={"Chain"}/>*/}
+                    <input className={styles.Input} value={amountI} onChange={(e) => {
+                        setAmountI(e.target.value)
+                    }} placeholder={"Amount (in USD)"}/>
                     <div className={styles.timeBox}>
-                        <input className={styles.Input} value={amountI} onChange={(e) => {
+                        <input className={styles.Input} value={timeI} onChange={(e) => {
                             setTimeI(e.target.value)
-                        }} placeholder={"Timeframe (in Days, Months or Years)"}/>
-                        <p onClick={() => setTimeUnit("D")} style={{fontWeight:timeUnit==="D"?"900":"normal", color:timeUnit==="D"?"#5d42fe":""}}>D</p>
-                        <p onClick={() => setTimeUnit("M")} style={{fontWeight:timeUnit==="M"?"900":"normal", color:timeUnit==="M"?"#5d42fe":""}}>M</p>
-                        <p onClick={() => setTimeUnit("Y")} style={{fontWeight:timeUnit==="Y"?"900":"normal", color:timeUnit==="Y"?"#5d42fe":""}}>Y</p>
+                        }} placeholder={"Timeframe "}/>
+                        <p onClick={() => setTimeUnit("D")} style={{fontWeight:timeUnit==="D"?"900":"500", color:timeUnit==="D"?"#5d42fe":""}}>D</p>
+                        <p onClick={() => setTimeUnit("M")} style={{fontWeight:timeUnit==="M"?"900":"500", color:timeUnit==="M"?"#5d42fe":""}}>M</p>
+                        <p onClick={() => setTimeUnit("Y")} style={{fontWeight:timeUnit==="Y"?"900":"500", color:timeUnit==="Y"?"#5d42fe":""}}>Y</p>
                     </div>
                 </div>
                 <div className={styles.Footing}>
-                    <input className={styles.Input} value={amountI} onChange={(e) => {
-                        setAmountI(e.target.value)
-                    }} placeholder={"Amount"}/>
                     <button disabled={loadSearch} onClick={calculate} className={styles.Button}>Calculate</button>
                 </div>
             </div>

@@ -7,12 +7,12 @@ import {useState} from "react";
 
 export default function Home() {
     const [search, setSearch] = useState(null);
-    const [chain, setChain] = useState(null);
-    const [platform, setPlatform] = useState(null);
-    const [sortBy, setSortBy] = useState(null);
+    const [chain, setChain] = useState({label:"Any",value:-1});
+    const [platform, setPlatform] = useState({label:"Any",value:-1});
+    const [sortBy, setSortBy] = useState({label:"APR", value:"apr"});
     const [amount, setAmount] = useState(0);
     const [loadSearch, setLoadSearch] = useState(false);
-    const [timeInDays, setTimeInDays] = useState(0);
+    const [timeInDays, setTimeInDays] = useState("");
 
   return (
     <div className={styles.container}>
