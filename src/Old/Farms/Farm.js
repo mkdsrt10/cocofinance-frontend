@@ -1,4 +1,4 @@
-import styles from "../../styles/Farm.module.css";
+import styles from "../../../styles/Old/Farm.module.css";
 import {useEffect, useState} from "react";
 import Image from "next/image";
 
@@ -65,6 +65,13 @@ export default function Farm({farm, amount, timeInDays}){
                     <Image src={"/"+farm.logo} width={50} height={50}/>
                     <h4>{farm.name}</h4>
                 </div>
+                {
+                    amount > 1 &&
+                    <div className={styles.summaryValueAmount}>
+                        <h4>{formatTvl(calInterest(amount, farm.apr, farm.rateCompound, timeInDays))}</h4>
+                        <p>Expected Interest</p>
+                    </div>
+                }
                 <div className={styles.summaryIcon}>
                     <div className={styles.summaryValue}>
                         <h4>{formatApy(farm.apr)}</h4>
@@ -79,13 +86,6 @@ export default function Farm({farm, amount, timeInDays}){
                         <p>TVL</p>
                     </div>
                 </div>
-                {
-                    amount > 1 &&
-                    <div className={styles.summaryValue}>
-                        <h4>{formatTvl(calInterest(amount, farm.apr, farm.rateCompound, timeInDays))}</h4>
-                        <p>Expected Interest</p>
-                    </div>
-                }
             </div>
             <div className={styles.desciptionBox}>
                 <div className={styles.desciptionBoxBreif}>

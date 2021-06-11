@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
-import Headerbar from "../../src/Headerbar"
+import styles from '../../styles/Old/Home.module.css'
+import Headerbar from "../../src/Old/Headerbar"
 
 export default function Blog() {
   return (

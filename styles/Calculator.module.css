@@ -1,51 +1,59 @@
 .Main{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30vw;
-    height: 100vh;
+    justify-content: space-evenly;
     background: #FFFFFF;
     box-sizing: border-box;
-    padding: 4vh 4vw;
+    margin: auto;
+    max-width: 700px;
+    padding: 5vh 4rem;
+    flex: 2;
 }
-.MainCont{
-    border-left: 1px solid #D7D7DF;
-}
-.Heading{
-
+@media only screen and (max-width: 850px) {
+    .Main{
+        margin: auto -6vw;
+        padding: 3vh 2rem;
+        /*background: #FFFFFF;*/
+    }
 }
 .Heading h1{
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 2rem;
-    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    margin: 0.5rem 0 2rem;
     color: #2A3256;
 }
-.Heading p{
+.Heading h1 span{
+    color: #573BFF;
+}
+.Calculator p{
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    color: #9095A2;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: #2A3256;
 }
-
+@media only screen and (max-width: 850px) {
+    .Heading h1{
+        font-size: 1.3rem;
+    }
+    .Calculator p{
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+}
 .Input{
     border: none;
-    border-bottom: 1px solid #979BB0;
     flex: 1;
     width: 100%;
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1.2rem;
     padding: 1vh 0;
-    color: #979BB0;
-    margin-left: 2px;
-    margin-right: 2rem;
-    margin-bottom: 1.2rem;
+    color: #2A3256;
     outline: none !important;
 }
 .Input::placeholder{
@@ -56,12 +64,9 @@
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1.2rem;
     padding: 1vh 0;
     color: #979BB0;
-    margin-left: 2px;
-    margin-right: 2px;
     outline: none !important;
 }
 .Button{
@@ -78,50 +83,88 @@
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1rem;
     color: white;
 }
-.Footing{
-
+@media only screen and (max-width: 850px) {
+    .Input{
+        font-size: 1rem;
+        padding: 1vh 0;
+        color: #2A3256;
+    }
+    .Input::placeholder{
+        font-size: 1rem;
+        padding: 1vh 0;
+        color: #979BB0;
+    }
+    .Button{
+        padding: 1vh 1vh;
+        font-size: 1rem;
+        color: white;
+    }
 }
-.Hide{
-    position: fixed;
-    top: 10vh;
-    padding: 0.5rem;
-    border-radius: 5px 0 0 5px;
-    border: 1px solid #D7D7DF;
-    border-right: 1px solid white;
-    background-color: white;
-    z-index: 10;
-
+.inputBox{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #979BB0;
+    margin-left: 2px;
+    margin-right: 2rem;
+    flex: 1;
+}
+.inputBox .Input{
+    flex-grow: 1;
+}
+.inputBox p{
+    margin: 0;
+    color: #979BB0;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
     cursor: pointer;
 }
-.timeBox{
+.inputBoxTime{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex: 1;
+    margin-bottom: 2rem;
 }
-.timeBox p{
-    font-size: 18px;
-    margin: 0 10px;
+.inputBoxTime p{
+    margin: 0;
+    color: #979BB0;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
     cursor: pointer;
 }
-
-@media only screen and (max-width: 800px) {
-    .MainCont{
-        display: none;
-        /*position: fixed;*/
-        /*height: 50%;*/
-        /*width: 100%;*/
-        /*z-index: 50;*/
-        /*bottom: 10vh;*/
-        /*border-top: 1px solid #D7D7DF;*/
-        /*border-left: none;*/
-    }
-    .Main{
+.timeFrame{
+    display: flex;
+    flex-direction: row;
+}
+.timeFrame p{
+    margin-right: 1.2rem;
+    font-size:1.4rem;
+}
+@media only screen and (max-width: 850px) {
+    .inputBoxTime{
+        display: flex;
+        align-items: center;
         width: 100%;
-        height: 100%;
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+    .inputBoxTime p{
+        margin: 0;
+        color: #979BB0;
+        font-size: 1.2rem;
+        margin-right: 0.3rem;
+        cursor: pointer;
+    }
+    .timeFrame{
+        display: flex;
+        flex-direction: row;
+    }
+    .timeFrame p{
+        margin-right: 1rem;
+        font-size:1.2rem;
     }
 }

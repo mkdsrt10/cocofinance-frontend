@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Headerbar from "../src/Headerbar"
-import Messages from "../src/Messages/MessagesList";
+import Headerbar from "../src/Header"
+import Messages from "../src/Old/Messages/MessagesList";
 
 export default function Notification() {
     return (

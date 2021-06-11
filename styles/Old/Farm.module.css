@@ -60,6 +60,43 @@
     align-items: center;
     flex: 1
 }
+@media only screen and (max-width: 850px) {
+    .summaryValue{
+        margin: 1rem 0;
+    }
+}
+.summaryValueAmount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 2
+}
+.summaryValueAmount h4{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #573BFF;
+    text-align: center;
+    margin: 0.1rem;
+    width: 100%;
+}
+.summaryValueAmount p{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #979BB0;
+    margin: 0.1rem;
+    width: 100%;
+}
+@media only screen and (max-width: 850px) {
+    .summaryValueAmount{
+        margin: 0 0 1rem;
+    }
+}
 .desciptionBox{
     border-top: 1px solid #D7D7DF;
     display: flex;
@@ -103,16 +140,14 @@
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 1.2rem;
     color: #2A3256;
 }
 .desciptionBoxDetailsInstruction p{
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 0.9rem;
     color: #979BB0;
 }
 .desciptionBoxDetailsLinks{

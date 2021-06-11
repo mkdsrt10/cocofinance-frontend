@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Headerbar from "../src/Headerbar"
-import FarmList from "../src/Farms/FarmList"
-import Calculator from "../src/Calculator"
+import Header from "../src/Header"
+import FarmList from "../src/Old/Farms/FarmList"
+import Calculator from "../src/Old/Calculator"
 import {useState} from "react";
 
 export default function Home() {
@@ -12,22 +12,25 @@ export default function Home() {
     const [sortBy, setSortBy] = useState({label:"APR", value:"apr"});
     const [amount, setAmount] = useState(0);
     const [loadSearch, setLoadSearch] = useState(false);
+    const [time, setTime] = useState(null)
+    const [timeUnit, setTimeUnit] = useState(null)
     const [timeInDays, setTimeInDays] = useState("");
 
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Be conservative in crypto.</title>
-        <meta name="description" content="A stable vault aggregator for safety in crypto" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-        <div className={styles.App}>
-            <Headerbar />
-            <FarmList amount={amount} timeInDays={timeInDays} chain={chain} setChain={setChain} platform={platform} sortBy={sortBy} setSortBy={setSortBy}
-                      setPlatform={setPlatform} search={search} setSearch={setSearch} setLoadSearch={setLoadSearch} />
-            <Calculator setAmount={setAmount} setTimeInDays={setTimeInDays} setLoadSearch={setLoadSearch} loadSearch={loadSearch} setChain={setChain}
-                        setSearch={setSearch} />
+    return (
+        <div className={styles.container}>
+            <Head>
+                <title>Grow multifold safely</title>
+                <meta name="description" content="A stable vault aggregator for safety in crypto" />
+                <link rel="icon" href="/logo.svg" />
+            </Head>
+            <div className={styles.App}>
+                <Header />
+                <FarmList time={time} setTime={setTime} timeUnit={timeUnit} setTimeUnit={setTimeUnit}
+                          setTimeInDays={setTimeInDays} loadSearch={loadSearch} setAmount={setAmount}
+                          amount={amount} timeInDays={timeInDays} chain={chain} setChain={setChain}
+                          platform={platform} sortBy={sortBy} setSortBy={setSortBy}
+                          setPlatform={setPlatform} search={search} setSearch={setSearch} setLoadSearch={setLoadSearch} />
+            </div>
         </div>
-    </div>
-  )
+    )
 }

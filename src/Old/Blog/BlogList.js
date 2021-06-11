@@ -1,4 +1,4 @@
-import styles from '../../styles/MessageList.module.css'
+import styles from '../../../styles/Old/MessageList.module.css'
 import ListBlog from "./ListBlog";
 import Image from "next/image"
 

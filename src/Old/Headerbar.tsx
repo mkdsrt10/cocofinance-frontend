@@ -1,4 +1,4 @@
-import styles from '../styles/Header.module.css'
+import styles from '../../styles/Old/Header.module.css'
 import Image from 'next/image'
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";

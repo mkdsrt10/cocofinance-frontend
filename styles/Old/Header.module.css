@@ -1,0 +1,116 @@
+.Header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 120px;
+    min-width: 90px;
+    height: 100vh;
+    padding: 6vh 1vw;
+    border-right: lightgrey solid 1px;
+}
+.NavList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 1vw 80px;
+}
+.NavItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.NavItems p{
+    margin: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.NavItemsSelected{
+    color: #573BFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.NavItemsSelected p{
+    color: #573BFF;
+    margin: 0.8rem;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+.LogoMobile{
+    display: none;
+}
+.LogoWeb{
+    display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .Header{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        max-width: 800px;
+        min-width: 90px;
+        width: 100%;
+        height: 9vh;
+        padding: 1vh 2vw;
+        border-top: lightgrey solid 1px;
+        border-right: none;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        z-index: 100;
+    }
+    .NavList{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+    }
+    .NavItems{
+        flex: 1;
+        margin: 1rem 0;
+        cursor: pointer;
+        height: auto;
+    }
+    .NavItemsSelected{
+        flex: 1;
+        height: auto;
+    }
+    .LogoMobile{
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        margin: 0;
+        align-items: center;
+        /*height: 100%;*/
+    }
+    .LogoWeb{
+        display: none;
+    }
+    .NavItems p{
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        font-size: 1rem;
+    }
+    .NavItemsSelected p{
+        font-size: 1rem;
+        margin: 0;
+    }
+}

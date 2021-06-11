@@ -1,4 +1,4 @@
-import styles from "../../styles/ListFarm.module.css";
+import styles from "../../../styles/MessageList.module.css";
 import {useState} from "react";
 import Message from "./Message";
 

@@ -1,6 +1,6 @@
-import styles from "../../styles/Message.module.css";
+import styles from "../../../styles/Old/Message.module.css";
 
-export default function Message({message}){
+export default function Blog({message}){
     return (
         <div className={styles.main}>
             <div className={styles.Heading}>

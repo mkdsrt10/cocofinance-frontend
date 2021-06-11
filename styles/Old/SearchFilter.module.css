@@ -1,3 +1,22 @@
+.SearchComp{
+    background: #FFFFFF;
+    border: 1px solid #D7D7DF;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+.MainHide{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1rem;
+    flex: 2;
+}
 .SearchMulti{
 
 }
@@ -29,14 +48,35 @@
     font-size: 1rem;
     color: #573BFF;
 }
-
-.FilterSort{
+.AmountBarEdit{
+    margin: 0 2rem;
+    cursor:pointer;
+}
+.AmountBar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 1vh 1rem 1vh;
+}
+.AmountBar h1{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #2A3256;
+    margin: 0.5vh 0 1vh;
+}
+.AmountBar h1 span {
+    color: #573BFF;
+}
+.FilterSort{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100%;
-    margin-top: 4vh;
+    margin-top: 0.5vh;
 }
 .FilterSortItem{
     flex: 1;
@@ -44,19 +84,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-right: 4vw;
+    margin: 0 1rem 1rem;
 }
 .FilterSortItem p{
-    margin: 0.2rem 0;
-
+    margin: 0.1rem 0;
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #979BB0;
-}
-.SearchAssetsMobile, .FilterSortMobile{
-    display: none;
 }
 
 @media only screen and (max-width: 800px) {
@@ -77,16 +113,7 @@
         margin-top: 1vh;
     }
     .FilterSort{
-        display: none;
-    }
-    .FilterSortMobile{
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        flex: 1;
-        margin-bottom: 2vh;
     }
     .FilterSortItem{
         flex: 1;
@@ -105,5 +132,12 @@
         font-weight: normal;
         font-size: 0.9rem;
         color: #979BB0;
+    }
+    .AmountBar{
+        padding: 0;
+        flex-direction: column;
+    }
+    .AmountBarEdit{
+        align-self: flex-end;
     }
 }
