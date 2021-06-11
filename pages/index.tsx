@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Header from "../src/Header"
 import FarmList from "../src/Old/Farms/FarmList"
-import Calculator from "../src/Old/Calculator"
 import {useState} from "react";
 
 export default function Home() {

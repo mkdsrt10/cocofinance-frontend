@@ -3,10 +3,12 @@ import SearchFilter from "../SearchFilter";
 import ListFarms from "./ListFarms";
 import Calculator from "../Calculator";
 import {useState} from "react";
+import useAssetsDetails from "../data/useAssetsDetails";
 
 export default function FarmList({search, setAmount, setTimeInDays, loadSearch, amount, setSearch, chain, time, timeUnit, setTime,
                                      setTimeUnit, platform, sortBy, setChain, setPlatform, setSortBy, setLoadSearch, timeInDays}){
     const [hideCalc, setHide] = useState(false);
+    const farms = useAssetsDetails({search, chain, sortBy, platform});
     return (
         <div className={styles.MainContainer}>
             <div className={styles.Main}>

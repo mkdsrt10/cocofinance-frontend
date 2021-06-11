@@ -4,6 +4,7 @@
     background-color: #F7F8FA;
     padding-bottom: 5vh;
     display: flex;
+    min-height: 100vh;
     justify-content: center;
 }
 .Main{
